@@ -674,11 +674,25 @@ export function AdvancedSankeyV2(props: AdvancedSankeyV2ContainerProps): ReactEl
                     const level0Parent = levelConfig.parentLevel0NameAttribute?.get(item);
                     // Récupérer le type d'énergie
                     const energyType = levelConfig.energyTypeAttribute?.get(item);
-                    const normalizedEnergyType = energyType?.status === ValueStatus.Available && energyType.value
-                        ? energyType.value.toLowerCase()
-                        : levelConfig.levelOrder === 2 && typeof nameValue.value === 'string'
-                        ? inferEnergyTypeFromName(nameValue.value)
-                        : undefined;
+                    
+                    // --- Modification ici ---
+                    let normalizedEnergyType: string | undefined = undefined;
+                    if (energyType?.status === ValueStatus.Available && energyType.value) {
+                        const typeLower = energyType.value.toLowerCase();
+                        if (typeLower.includes('elec') || typeLower.includes('électr')) {
+                            normalizedEnergyType = 'elec';
+                        } else if (typeLower.includes('gaz')) {
+                            normalizedEnergyType = 'gaz';
+                        } else if (typeLower.includes('eau')) {
+                            normalizedEnergyType = 'eau';
+                        } else if (typeLower.includes('air')) { // Gère "Air Comprimé"
+                            normalizedEnergyType = 'air';
+                        }
+                    } else if (levelConfig.levelOrder === 2 && typeof nameValue.value === 'string') {
+                       // L'inférence depuis le nom peut rester comme fallback si energyTypeAttribute n'est pas défini
+                       normalizedEnergyType = inferEnergyTypeFromName(nameValue.value);
+                    }
+                    // --- Fin de la modification ---
                     
                     // Log plus détaillé pour debug
                     console.log(`[DEBUG] Item ${itemIndex} attributes for ${levelConfig.levelId}:`, {
@@ -1034,9 +1048,17 @@ export function AdvancedSankeyV2(props: AdvancedSankeyV2ContainerProps): ReactEl
                 }))
             });
 
+            // --- Log before filtering ---
+            console.log("Data before filtering (sankeyData):", JSON.stringify(sankeyData, null, 2));
+            // --- End log ---
+
             // Filtrer les données selon la vue actuelle
             const filteredData = filterDataForView(sankeyData, selectedNode);
             
+            // --- Log after filtering ---
+            console.log("Data after filtering (filteredData):", JSON.stringify(filteredData, null, 2));
+            // --- End log ---
+
             console.log("Données filtrées:", {
                 selectedEnergy: props.selectedEnergies,
                 originalNodesCount: sankeyData.nodes.length,
@@ -1185,6 +1207,10 @@ export function AdvancedSankeyV2(props: AdvancedSankeyV2ContainerProps): ReactEl
                 value: Math.max(0, d.value)
             })).filter(link => link.source !== -1 && link.target !== -1)
         };
+
+        // --- Add this logging ---
+        console.log("Data passed to sankeyGenerator:", JSON.stringify(processedData, null, 2));
+        // --- End of added logging ---
 
         const { nodes, links } = sankeyGenerator(processedData);
 

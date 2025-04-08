@@ -1,0 +1,66 @@
+{
+  "name": "advancedsankeyv2",
+  "widgetName": "AdvancedSankeyV2",
+  "version": "1.0.0",
+  "description": "My widget description",
+  "copyright": "© Mendix Technology BV 2022. All rights reserved.",
+  "author": "Arthur",
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "Apache-2.0",
+  "config": {
+    "projectPath": "../../",
+    "mendixHost": "http://localhost:8080",
+    "developmentPort": 3000
+  },
+  "packagePath": "mendix",
+  "scripts": {
+    "start": "pluggable-widgets-tools start:server",
+    "dev": "npx pluggable-widgets-tools start:web",
+    "build": "pluggable-widgets-tools build:web",
+    "lint": "pluggable-widgets-tools lint",
+    "lint:fix": "pluggable-widgets-tools lint:fix",
+    "prerelease": "npm run lint",
+    "release": "pluggable-widgets-tools release:web",
+    "test": "jest --verbose --runInBand",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "@mendix/pluggable-widgets-tools": "^10.12.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/big.js": "^6.0.2",
+    "@types/jest": "^29.5.14",
+    "@types/recharts": "^1.8.29",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5"
+  },
+  "dependencies": {
+    "@types/d3": "^7.4.3",
+    "@types/d3-sankey": "^0.12.4",
+    "@types/echarts": "^4.9.22",
+    "apexcharts": "^4.4.0",
+    "apexsankey": "^1.2.0",
+    "classnames": "^2.2.6",
+    "d3": "^7.9.0",
+    "d3-sankey": "^0.12.3",
+    "framer-motion": "^11.5.4",
+    "lucide-react": "^0.475.0",
+    "recharts": "^2.12.7"
+  },
+  "overrides": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0"
+  },
+  "resolutions": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0"
+  }
+}

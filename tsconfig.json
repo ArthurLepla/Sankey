@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["es6", "dom"],
+    "module": "es6",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "experimentalDecorators": true,
+    "outDir": "dist",
+    "rootDir": "./src",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "./src",
+    ".eslintrc.js" // Inclure ce fichier explicitement
+  ],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,501 @@
+[Network] Starting runtime action: runtimeOperation mxui.js:59:42151
+[Network] Finished runtime action "runtimeOperation" in 3063.0 milliseconds. mxui.js:59:42151
+[Client] Smart.Initialisation_secteur_atelier_machine.grid1: fetching data using XPath '//Smart.Secteur' filter: 
+Object { offset: 0, amount: 20, id: "abe40e73-c399-48ca-8eaf-bad83707882f", attributes: undefined, distinct: undefined }
+mxui.js:59:42151
+[Network] Starting runtime action: retrieve_by_xpath mxui.js:59:42151
+[Client] Smart.Initialisation_secteur_atelier_machine.grid3: fetching data using XPath '//Smart.Machine' filter: 
+Object { offset: 0, amount: 20, id: "619547aa-795e-4d23-b5ea-62ae012eb3b5", attributes: undefined, distinct: undefined }
+mxui.js:59:42151
+[Network] Starting runtime action: retrieve_by_xpath mxui.js:59:42151
+[Client] Smart.Initialisation_secteur_atelier_machine.grid2: fetching data using XPath '//Smart.Atelier' filter: 
+Object { offset: 0, amount: 20, id: "8c504c55-4f8d-4c29-a54f-efbc43afcb00", attributes: undefined, distinct: undefined }
+mxui.js:59:42151
+[Network] Starting runtime action: retrieve_by_xpath mxui.js:59:42151
+[Client] Smart.Initialisation_secteur_atelier_machine.grid5: fetching data using XPath '//Smart.Usine' filter: 
+Object { offset: 0, amount: 20, id: "2556e8a6-6346-4162-94bf-9c0e28a1645c", attributes: undefined, distinct: undefined }
+mxui.js:59:42151
+[Network] Starting runtime action: retrieve_by_xpath mxui.js:59:42151
+[Navigation] Open a page with id: Smart/VueGlobale_Elec.page.xml. mxui.js:59:42151
+[Network] Starting GET http://192.168.1.8:60000/pages/en_US/Smart/VueGlobale_Elec.page.xml?638750426868858458 mxui.js:59:42151
+[Network] Finished GET http://192.168.1.8:60000/pages/en_US/Smart/VueGlobale_Elec.page.xml?638750426868858458 in 136.0 milliseconds. Response code 200. mxui.js:59:42151
+[Network] Finished runtime action "retrieve_by_xpath" in 168.0 milliseconds. mxui.js:59:42151
+[Client] Smart.Initialisation_secteur_atelier_machine.grid1: received 5 objects of 5 total object ids: 
+Array(5) [ "29273397577946754", "29273397577946913", "29273397577947026", "29273397577947136", "29273397577947358" ]
+mxui.js:59:42151
+[Network] Finished runtime action "retrieve_by_xpath" in 166.0 milliseconds. mxui.js:59:42151
+[Client] Smart.Initialisation_secteur_atelier_machine.grid2: received 17 objects of 17 total object ids: 
+Array(17) [ "1970324837013236", "1970324837013312", "1970324837013454", "1970324837013531", "1970324837013723", "1970324837013855", "1970324837013900", "1970324837014106", "1970324837014209", "1970324837014391", … ]
+mxui.js:59:42151
+[Network] Finished runtime action "retrieve_by_xpath" in 175.0 milliseconds. mxui.js:59:42151
+[Client] Smart.Initialisation_secteur_atelier_machine.grid3: received 20 objects of 123 total object ids: 
+Array(20) [ "34058472182066382", "34058472182066521", "34058472182066601", "34058472182066749", "34058472182066906", "34058472182067035", "34058472182067109", "34058472182067298", "34058472182067376", "34058472182067457", … ]
+mxui.js:59:42151
+[Network] Finished runtime action "retrieve_by_xpath" in 189.0 milliseconds. mxui.js:59:42151
+[Client] Smart.Initialisation_secteur_atelier_machine.grid5: received 1 objects of 1 total object ids: 
+Array [ "23643898043708128" ]
+mxui.js:59:42151
+[Client] HeaderContainer props: 
+Object { hasStartDate: true, hasEndDate: true, hasOnDateChange: true }
+mxui.js:59:42151
+[Client] DateRangePicker props: 
+Object { startDateAttribute: {…}, endDateAttribute: {…}, onDateChange: {…}, hasOnChange: false }
+mxui.js:59:42151
+[Client] Initializing state with: 
+Object { startDateStatus: "loading", startDateValue: undefined, endDateStatus: "loading", endDateValue: undefined }
+mxui.js:59:42151
+[Client] [DEBUG] Début transformation des données mxui.js:59:42151
+[Client] [DEBUG] Maps initialisées: 
+Object { secteurs: 0, ateliers: 0 }
+mxui.js:59:42151
+[Client] [DEBUG] Machines transformées: 0 mxui.js:59:42151
+[Client] [DEBUG] Résultat final: 
+Object { nombreNoeuds: 0, timeRange: undefined, noeudsVides: 0 }
+mxui.js:59:42151
+[Client] useEffect triggered with: 
+Object { startDateStatus: "loading", startDateValue: undefined, endDateStatus: "loading", endDateValue: undefined }
+mxui.js:59:42151
+[Client] Using object '1125899907201194' for widget Smart.VueGlobale_Elec.dataView3 mxui.js:59:42151
+[Client] Fetching data using XPath with operationId 'aDdVjTvKM0aRplX+4yLlUA' for widget Smart.VueGlobale_Elec.headers1 mxui.js:59:42151
+[Network] Starting runtime action: runtimeOperation mxui.js:59:42151
+[Client] HeaderContainer props: 
+Object { hasStartDate: true, hasEndDate: true, hasOnDateChange: true }
+mxui.js:59:42151
+[Client] DateRangePicker props: 
+Object { startDateAttribute: {…}, endDateAttribute: {…}, onDateChange: {…}, hasOnChange: false }
+mxui.js:59:42151
+[Client] Using object '1125899907201194' for widget Smart.VueGlobale_Elec.dataView1 mxui.js:59:42151
+[Client] Using object '14636698789133528' for widget Smart.VueGlobale_Elec.dataView2 mxui.js:59:42151
+[Client] Fetching data using XPath with operationId '0nXxut+LckGlCscqsn50jA' for widget Smart.VueGlobale_Elec.advancedSankey2 mxui.js:59:42151
+[Network] Starting runtime action: runtimeOperation mxui.js:59:42151
+[Client] Fetching data using XPath with operationId '7LrC7mixQ0uUhUqdpmwjpg' for widget Smart.VueGlobale_Elec.advancedSankey2 mxui.js:59:42151
+[Network] Starting runtime action: runtimeOperation mxui.js:59:42151
+[Client] Fetching data using XPath with operationId '1TaABA0U8kaq/QLQsfn96Q' for widget Smart.VueGlobale_Elec.advancedSankey2 mxui.js:59:42151
+[Network] Starting runtime action: runtimeOperation mxui.js:59:42151
+[Client] [DEBUG] Début transformation des données mxui.js:59:42151
+[Client] [DEBUG] Maps initialisées: 
+Object { secteurs: 0, ateliers: 0 }
+mxui.js:59:42151
+[Client] [DEBUG] Machines transformées: 0 mxui.js:59:42151
+[Client] [DEBUG] Résultat final: 
+Object { nombreNoeuds: 0, timeRange: {…}, noeudsVides: 0 }
+mxui.js:59:42151
+[Client] Fetching data using XPath with operationId 'oMxXrDf8IU+czg0zfVfyzw' for widget Smart.VueGlobale_Elec.ranking1 mxui.js:59:42151
+[Network] Starting runtime action: runtimeOperation mxui.js:59:42151
+[Client] useEffect triggered with: 
+Object { startDateStatus: "available", startDateValue: Date Sat Feb 01 2025 01:00:00 GMT+0100 (Central European Standard Time), endDateStatus: "available", endDateValue: Date Sat Mar 01 2025 01:00:00 GMT+0100 (Central European Standard Time) }
+mxui.js:59:42151
+[Client] DateRangePicker props: 
+Object { startDateAttribute: {…}, endDateAttribute: {…}, onDateChange: {…}, hasOnChange: false }
+mxui.js:59:42151
+[Network] Finished runtime action "runtimeOperation" in 54.0 milliseconds. mxui.js:59:42151
+[Client] Received 123 objects for widget Smart.VueGlobale_Elec.headers1 object ids: 
+Array(123) [ "34058472182066382", "34058472182066521", "34058472182066601", "34058472182066749", "34058472182066906", "34058472182067035", "34058472182067109", "34058472182067298", "34058472182067376", "34058472182067457", … ]
+mxui.js:59:42151
+[Client] HeaderContainer props: 
+Object { hasStartDate: true, hasEndDate: true, hasOnDateChange: true }
+mxui.js:59:42151
+[Client] DateRangePicker props: 
+Object { startDateAttribute: {…}, endDateAttribute: {…}, onDateChange: {…}, hasOnChange: false }
+mxui.js:59:42151
+[Network] Finished runtime action "runtimeOperation" in 120.0 milliseconds. mxui.js:59:42151
+[Client] Received 5 objects for widget Smart.VueGlobale_Elec.advancedSankey2 object ids: 
+Array(5) [ "29273397577946754", "29273397577946913", "29273397577947026", "29273397577947136", "29273397577947358" ]
+mxui.js:59:42151
+[Client] [DEBUG] Début transformation des données mxui.js:59:42151
+[Client] [DEBUG] Maps initialisées: 
+Object { secteurs: 5, ateliers: 0 }
+mxui.js:59:42151
+[Client] [DEBUG] Machines transformées: 0 mxui.js:59:42151
+[Client] [DEBUG] Résultat final: 
+Object { nombreNoeuds: 5, timeRange: {…}, noeudsVides: 5 }
+mxui.js:59:42151
+[Network] Finished runtime action "runtimeOperation" in 122.0 milliseconds. mxui.js:59:42151
+[Client] Received 17 objects for widget Smart.VueGlobale_Elec.advancedSankey2 object ids: 
+Array(17) [ "1970324837013236", "1970324837013312", "1970324837013454", "1970324837013531", "1970324837013723", "1970324837013855", "1970324837013900", "1970324837014106", "1970324837014209", "1970324837014391", … ]
+mxui.js:59:42151
+[Network] Finished runtime action "runtimeOperation" in 117.0 milliseconds. mxui.js:59:42151
+[Client] Received 104 objects for widget Smart.VueGlobale_Elec.ranking1 object ids: 
+Array(104) [ "34058472182066382", "34058472182066521", "34058472182066601", "34058472182066749", "34058472182066906", "34058472182067035", "34058472182067109", "34058472182067298", "34058472182067376", "34058472182067457", … ]
+mxui.js:59:42151
+[Network] Finished runtime action "runtimeOperation" in 126.0 milliseconds. mxui.js:59:42151
+[Client] Received 123 objects for widget Smart.VueGlobale_Elec.advancedSankey2 object ids: 
+Array(123) [ "34058472182066382", "34058472182066521", "34058472182066601", "34058472182066749", "34058472182066906", "34058472182067035", "34058472182067109", "34058472182067298", "34058472182067376", "34058472182067457", … ]
+mxui.js:59:42151
+[Client] [DEBUG] Début transformation des données mxui.js:59:42151
+[Client] [DEBUG] Maps initialisées: 
+Object { secteurs: 5, ateliers: 1 }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Validation machine: 
+Object { name: {…}, secteur: {…}, energie: {…}, conso: {…} }
+mxui.js:59:42151
+[Client] [DEBUG] Machines transformées: 123 mxui.js:59:42151
+[Client] [DEBUG] Résultat final: 
+Object { nombreNoeuds: 5, timeRange: {…}, noeudsVides: 0 }
+mxui.js:59:42151

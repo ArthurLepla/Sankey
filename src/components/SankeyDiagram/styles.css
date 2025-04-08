@@ -1,0 +1,294 @@
+.sankey-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sankey-navigation {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.level-indicator {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.navigation-buttons button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s;
+}
+
+.navigation-buttons button:hover {
+    background: #0056b3;
+}
+
+.navigation-buttons button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.sankey-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.sankey-node {
+    transition: opacity 0.3s;
+}
+
+.sankey-node rect {
+    transition: fill-opacity 0.3s, stroke 0.3s, stroke-width 0.3s;
+}
+
+.sankey-node text {
+    transition: font-weight 0.3s;
+}
+
+.sankey-node.selected rect {
+    filter: brightness(1.1);
+}
+
+.sankey-node.expanded rect {
+    filter: brightness(1.05);
+}
+
+.sankey-link {
+    transition: stroke-opacity 0.3s, stroke-width 0.3s;
+    cursor: pointer;
+}
+
+.sankey-link:hover {
+    stroke-opacity: 0.5 !important;
+}
+
+/* Animation pour l'expansion/réduction des nœuds */
+@keyframes expandNode {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+.sankey-node.expanded {
+    animation: expandNode 0.3s ease-out forwards;
+}
+
+/* Tooltip amélioré */
+.sankey-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 1000;
+    max-width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour les nœuds non-expandables */
+.sankey-node:not(.expandable) rect {
+    cursor: default;
+}
+
+/* Indicateur visuel pour les nœuds expandables */
+.sankey-node.expandable:hover rect {
+    filter: brightness(1.1);
+}
+
+.sankey-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #ff0000;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Styles pour les tooltips */
+title {
+    pointer-events: none;
+}
+
+.sankey-header {
+    padding: 16px 24px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sankey-header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sankey-title-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.energy-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.energy-icon:hover {
+    transform: scale(1.1);
+}
+
+.sankey-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.sankey-period {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.period-label {
+    font-weight: 500;
+}
+
+.period-dates {
+    color: #888;
+}
+
+.sankey-breadcrumbs {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 16px;
+}
+
+.breadcrumb-home,
+.breadcrumb-item {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.breadcrumb-home:hover,
+.breadcrumb-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.breadcrumb-separator {
+    color: #666;
+    margin: 0 4px;
+}
+
+.breadcrumb-level {
+    color: #666;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+/* Styles pour ApexSankey */
+.apex-sankey-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.sankey-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.sankey-navigation button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.sankey-navigation button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.sankey-navigation button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.level-indicator {
+    font-weight: 500;
+    color: #333;
+}
+
+.sankey-tooltip {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.sankey-tooltip-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.sankey-tooltip-content {
+    font-size: 0.9rem;
+} 

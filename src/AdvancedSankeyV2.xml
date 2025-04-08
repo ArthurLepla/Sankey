@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendix.advancedsankeyv2.AdvancedSankeyV2" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Advanced Sankey V2</name>
+    <description>Un diagramme Sankey avancé avec navigation multi-niveaux pour visualiser les relations hiérarchiques</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="Configuration des niveaux">
+            <property key="hierarchyConfig" type="object" isList="true" required="true">
+                <caption>Configuration des niveaux</caption>
+                <description>Configuration de chaque niveau de la hiérarchie (du plus haut au plus bas)</description>
+                <properties>
+                    <propertyGroup caption="Configuration du niveau">
+                        <property key="levelId" type="string" required="true">
+                            <caption>Identifiant du niveau</caption>
+                            <description>Identifiant unique pour ce niveau (ex: "LEVEL0", "LEVEL1", "LEVEL2")</description>
+                        </property>
+                        <property key="levelName" type="string" required="true">
+                            <caption>Nom du niveau</caption>
+                            <description>Nom d'affichage du niveau</description>
+                        </property>
+                        <property key="levelOrder" type="integer" required="true" defaultValue="0">
+                            <caption>Ordre du niveau</caption>
+                            <description>Position du niveau dans la hiérarchie (0 pour le plus haut)</description>
+                        </property>
+                    </propertyGroup>
+
+                    <propertyGroup caption="Source de données">
+                        <property key="entityPath" type="datasource" isList="true" required="true">
+                            <caption>Entité du niveau</caption>
+                            <description>L'entité contenant les données pour ce niveau</description>
+                        </property>
+                        <property key="nameAttribute" type="attribute" required="true" dataSource="entityPath">
+                            <caption>Attribut nom</caption>
+                            <description>Attribut contenant le nom de l'élément</description>
+                            <attributeTypes>
+                                <attributeType name="String"/>
+                            </attributeTypes>
+                        </property>
+                        <property key="valueAttribute" type="attribute" required="true" dataSource="entityPath">
+                            <caption>Attribut valeur</caption>
+                            <description>Attribut contenant la valeur à afficher</description>
+                            <attributeTypes>
+                                <attributeType name="Decimal"/>
+                                <attributeType name="Integer"/>
+                                <attributeType name="Long"/>
+                            </attributeTypes>
+                        </property>
+                        <property key="energyTypeAttribute" type="attribute" required="false" dataSource="entityPath">
+                            <caption>Attribut type d'énergie</caption>
+                            <description>Attribut contenant le type d'énergie (Elec, Gaz, Eau, Air)</description>
+                            <attributeTypes>
+                                <attributeType name="String"/>
+                            </attributeTypes>
+                        </property>
+                    </propertyGroup>
+
+                    <propertyGroup caption="Configuration des parents">
+                        <property key="parentLevel0NameAttribute" type="attribute" required="false" dataSource="entityPath">
+                            <caption>Attribut nom du parent niveau 0</caption>
+                            <description>Attribut contenant le nom du parent de niveau 0 (le plus haut)</description>
+                            <attributeTypes>
+                                <attributeType name="String"/>
+                            </attributeTypes>
+                        </property>
+                        <property key="parentLevel1NameAttribute" type="attribute" required="false" dataSource="entityPath">
+                            <caption>Attribut nom du parent niveau 1</caption>
+                            <description>Attribut contenant le nom du parent de niveau 1</description>
+                            <attributeTypes>
+                                <attributeType name="String"/>
+                            </attributeTypes>
+                        </property>
+                        <property key="parentLevel2NameAttribute" type="attribute" required="false" dataSource="entityPath">
+                            <caption>Attribut nom du parent niveau 2</caption>
+                            <description>Attribut contenant le nom du parent de niveau 2</description>
+                            <attributeTypes>
+                                <attributeType name="String"/>
+                            </attributeTypes>
+                        </property>
+                    </propertyGroup>
+
+                    <propertyGroup caption="Apparence">
+                        <property key="color" type="string" required="false">
+                            <caption>Couleur du niveau</caption>
+                            <description>Couleur par défaut pour les nœuds de ce niveau (format hex: #RRGGBB)</description>
+                        </property>
+                    </propertyGroup>
+
+                    <propertyGroup caption="Actions">
+                        <property key="levelClickedItemAttribute" type="attribute" required="false">
+                            <caption>Attribut de l'élément sélectionné</caption>
+                            <description>Attribut pour stocker l'identifiant de l'élément cliqué pour ce niveau</description>
+                            <attributeTypes>
+                                <attributeType name="String"/>
+                            </attributeTypes>
+                        </property>
+                        <property key="levelOnItemClick" type="action" required="false">
+                            <caption>Action au clic</caption>
+                            <description>Action à exécuter lors du clic sur un élément de ce niveau. Si non défini, permet la navigation dans le diagramme.</description>
+                        </property>
+                    </propertyGroup>
+                </properties>
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Interactions">
+            <property key="clickedItemAttribute" type="attribute" required="false">
+                <caption>Attribut de l'élément sélectionné</caption>
+                <description>Attribut pour stocker l'identifiant de l'élément cliqué</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+            <property key="onItemClick" type="action" required="false">
+                <caption>Action au clic</caption>
+                <description>Action à exécuter lors du clic sur un élément</description>
+            </property>
+            <property key="onLastLevelClick" type="action" required="false">
+                <caption>Action au clic sur le dernier niveau</caption>
+                <description>Action spécifique à exécuter lors du clic sur un nœud du dernier niveau</description>
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Configuration de l'affichage">
+            <property key="title" type="string" required="false">
+                <caption>Titre</caption>
+                <description>Titre du diagramme</description>
+            </property>
+            <property key="selectedEnergies" type="enumeration" defaultValue="all" required="true">
+                <caption>Énergies sélectionnées</caption>
+                <description>Liste des types d'énergie à afficher</description>
+                <enumerationValues>
+                    <enumerationValue key="all">Toutes</enumerationValue>
+                    <enumerationValue key="elec">Électricité</enumerationValue>
+                    <enumerationValue key="gaz">Gaz</enumerationValue>
+                    <enumerationValue key="eau">Eau</enumerationValue>
+                    <enumerationValue key="air">Air comprimé</enumerationValue>
+                </enumerationValues>
+            </property>
+            <property key="startDate" type="attribute" required="false">
+                <caption>Date de début</caption>
+                <description>Date de début de la période</description>
+                <attributeTypes>
+                    <attributeType name="DateTime"/>
+                </attributeTypes>
+            </property>
+            <property key="endDate" type="attribute" required="false">
+                <caption>Date de fin</caption>
+                <description>Date de début de la période</description>
+                <attributeTypes>
+                    <attributeType name="DateTime"/>
+                </attributeTypes>
+            </property>
+            <property key="unitOfMeasure" type="string" required="false">
+                <caption>Unité de mesure personnalisée</caption>
+                <description>Unité de mesure personnalisée (optionnel). Si non spécifié :
+                    - Électricité : kWh/MWh/GWh (conversion automatique)
+                    - Gaz : m³
+                    - Eau : m³
+                    - Air : m³
+                    Les valeurs en kWh seront automatiquement converties en MWh si > 10000 kWh, et en GWh si > 10000 MWh.</description>
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Configuration des prix">
+            <property key="prixConfig" type="object" isList="true" required="false">
+                <caption>Configuration des prix</caption>
+                <description>Configuration pour l'affichage des coûts énergétiques</description>
+                <properties>
+                    <propertyGroup caption="Source de données">
+                        <property key="donneesEntity" type="datasource" isList="true" required="false">
+                            <caption>Entité Smart.Donnees</caption>
+                            <description>Source de données pour les prix des énergies</description>
+                        </property>
+                    </propertyGroup>
+
+                    <propertyGroup caption="Prix des énergies">
+                        <property key="prixElec" type="attribute" dataSource="donneesEntity" required="false">
+                            <caption>Prix Électricité</caption>
+                            <description>Prix du kWh électrique</description>
+                            <attributeTypes>
+                                <attributeType name="Decimal"/>
+                            </attributeTypes>
+                        </property>
+                        <property key="prixGaz" type="attribute" dataSource="donneesEntity" required="false">
+                            <caption>Prix Gaz</caption>
+                            <description>Prix du m³ de gaz</description>
+                            <attributeTypes>
+                                <attributeType name="Decimal"/>
+                            </attributeTypes>
+                        </property>
+                        <property key="prixEau" type="attribute" dataSource="donneesEntity" required="false">
+                            <caption>Prix Eau</caption>
+                            <description>Prix du m³ d'eau</description>
+                            <attributeTypes>
+                                <attributeType name="Decimal"/>
+                            </attributeTypes>
+                        </property>
+                        <property key="prixAir" type="attribute" dataSource="donneesEntity" required="false">
+                            <caption>Prix Air</caption>
+                            <description>Prix du m³ d'air comprimé</description>
+                            <attributeTypes>
+                                <attributeType name="Decimal"/>
+                            </attributeTypes>
+                        </property>
+                    </propertyGroup>
+
+                    <propertyGroup caption="Période de validité">
+                        <property key="dateDebut" type="attribute" dataSource="donneesEntity" required="false">
+                            <caption>Date de début</caption>
+                            <description>Date de début de validité des prix</description>
+                            <attributeTypes>
+                                <attributeType name="DateTime"/>
+                            </attributeTypes>
+                        </property>
+                        <property key="dateFin" type="attribute" dataSource="donneesEntity" required="false">
+                            <caption>Date de fin</caption>
+                            <description>Date de fin de validité des prix</description>
+                            <attributeTypes>
+                                <attributeType name="DateTime"/>
+                            </attributeTypes>
+                        </property>
+                    </propertyGroup>
+                </properties>
+            </property>
+            <property key="currency" type="string" defaultValue="€">
+                <caption>Devise</caption>
+                <description>Symbole de la devise pour l'affichage des coûts</description>
+            </property>
+            <property key="onNoPriceClick" type="action" required="false">
+                <caption>Action si pas de prix</caption>
+                <description>Action à exécuter lorsque l'utilisateur clique sur le bouton de redirection vers la page des prix</description>
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Développement">
+            <property key="showDebugTools" type="boolean" defaultValue="false">
+                <caption>Afficher les outils de débogage</caption>
+                <description>Active l'affichage des informations de débogage</description>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>

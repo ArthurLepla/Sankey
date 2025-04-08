@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendix.advancedsankeyv2.AdvancedSankeyV2" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Advanced Sankey</name>
+    <description>Advanced Sankey diagram for visualizing hierarchical energy consumption flows in an industrial setting</description>    
+    <properties>
+        <!-- Entités Sources -->
+        <propertyGroup caption="Entités">
+            <!-- Secteur -->
+            <property key="secteurEntity" type="datasource" isList="true" required="true">
+                <caption>Entité Secteur</caption>
+                <description>L'entité représentant les secteurs</description>
+            </property>
+            <property key="secteurNameAttr" type="attribute" required="true" dataSource="secteurEntity">
+                <caption>Nom du Secteur</caption>
+                <description>Attribut contenant le nom du secteur</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+            <property key="secteurConsommationAttr" type="attribute" required="true" dataSource="secteurEntity">
+                <caption>Consommation Secteur</caption>
+                <description>Attribut contenant la consommation du secteur</description>
+                <attributeTypes>
+                    <attributeType name="Decimal"/>
+                </attributeTypes>
+            </property>
+
+            <!-- Atelier -->
+            <property key="atelierEntity" type="datasource" isList="true" required="true">
+                <caption>Entité Atelier</caption>
+                <description>L'entité représentant les ateliers</description>
+            </property>
+            <property key="atelierNameAttr" type="attribute" required="true" dataSource="atelierEntity">
+                <caption>Nom de l'Atelier</caption>
+                <description>Attribut contenant le nom de l'atelier</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+            <property key="atelierConsommationAttr" type="attribute" required="true" dataSource="atelierEntity">
+                <caption>Consommation Atelier</caption>
+                <description>Attribut contenant la consommation de l'atelier</description>
+                <attributeTypes>
+                    <attributeType name="Decimal"/>
+                </attributeTypes>
+            </property>
+            <property key="atelierSecteurAttr" type="attribute" required="true" dataSource="atelierEntity">
+                <caption>Secteur de l'Atelier</caption>
+                <description>Attribut liant l'atelier à son secteur</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+
+            <!-- Machine -->
+            <property key="machineEntity" type="datasource" isList="true" required="true">
+                <caption>Entité Machine</caption>
+                <description>L'entité représentant les machines</description>
+            </property>
+            <property key="machineIdAttr" type="attribute" required="true" dataSource="machineEntity">
+                <caption>Identifiant Machine</caption>
+                <description>Attribut contenant l'identifiant de la machine</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+            <property key="machineNameAttr" type="attribute" required="true" dataSource="machineEntity">
+                <caption>Nom de la Machine</caption>
+                <description>Attribut contenant le nom de la machine</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+            <property key="machineConsommationAttr" type="attribute" required="true" dataSource="machineEntity">
+                <caption>Consommation Machine</caption>
+                <description>Attribut contenant la consommation de la machine</description>
+                <attributeTypes>
+                    <attributeType name="Decimal"/>
+                </attributeTypes>
+            </property>
+            <property key="machineAtelierAttr" type="attribute" required="false" dataSource="machineEntity">
+                <caption>Atelier de la Machine</caption>
+                <description>Attribut liant la machine à son atelier (optionnel)</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+            <property key="machineSecteurAttr" type="attribute" required="false" dataSource="machineEntity">
+                <caption>Secteur de la Machine</caption>
+                <description>Attribut liant la machine à son secteur (optionnel)</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+            <property key="machineEnergieAttr" type="attribute" required="true" dataSource="machineEntity">
+                <caption>Type d'Énergie</caption>
+                <description>Type d'énergie de la machine (Elec, Gaz, Eau, Air)</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+            <property key="selectedEnergies" type="enumeration" required="true" defaultValue="Tous">
+                <caption>Type d'Énergie Sélectionné</caption>
+                <description>Type d'énergie à afficher (sélectionnez "Tous" pour voir tous les types)</description>
+                <enumerationValues>
+                    <enumerationValue key="Tous">Tous les types</enumerationValue>
+                    <enumerationValue key="Elec">Électricité</enumerationValue>
+                    <enumerationValue key="Gaz">Gaz</enumerationValue>
+                    <enumerationValue key="Eau">Eau</enumerationValue>
+                    <enumerationValue key="Air">Air Comprimé</enumerationValue>
+                </enumerationValues>
+            </property>
+        </propertyGroup>
+
+        <!-- Appearance et autres groupes existants -->
+        <propertyGroup caption="Appearance">
+            <!-- Properties existantes inchangées -->
+            <property key="title" type="string" required="false">
+                <caption>Title</caption>
+                <description>Title of the Sankey diagram</description>
+            </property>
+            <property key="width" type="integer" defaultValue="800">
+                <caption>Width</caption>
+                <description>Width of the Sankey diagram in pixels</description>
+            </property>
+            <property key="height" type="integer" defaultValue="600">
+                <caption>Height</caption>
+                <description>Height of the Sankey diagram in pixels</description>
+            </property>
+            <property key="fullWidth" type="boolean" defaultValue="false">
+                <caption>Full Width</caption>
+                <description>If enabled, the widget will use the full available width</description>
+            </property>
+            <property key="colorScheme" type="string" defaultValue="vibrant">
+                <caption>Color Scheme</caption>
+                <description>Color scheme for the Sankey diagram</description>
+            </property>
+            <property key="unitOfMeasure" type="string" defaultValue="kWh">
+                <caption>Unit of Measure</caption>
+                <description>Unit of measure for the energy values</description>
+            </property>
+        </propertyGroup>
+
+        <!-- Autres groupes de propriétés existants -->
+        <propertyGroup caption="Behavior">
+            <property key="onNodeClick" type="action" required="false">
+                <caption>On Node Click Action</caption>
+                <description>Action à exécuter lors du clic sur un nœud</description>
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Date Range">
+            <property key="startDate" type="attribute" required="false">
+                <caption>Start Date</caption>
+                <description>Date de début pour la période sélectionnée</description>
+                <attributeTypes>
+                    <attributeType name="DateTime"/>
+                </attributeTypes>
+            </property>
+            <property key="endDate" type="attribute" required="false">
+                <caption>End Date</caption>
+                <description>Date de fin pour la période sélectionnée</description>
+                <attributeTypes>
+                    <attributeType name="DateTime"/>
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Machine Selection">
+            <property key="clickedMachineName" type="attribute" required="false">
+                <caption>Clicked Machine Name</caption>
+                <description>Attribut qui stockera le nom de la machine sélectionnée</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+            <property key="onMachineClick" type="action" required="false">
+                <caption>On Machine Click</caption>
+                <description>Action à exécuter lors du clic sur une machine</description>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>
